@@ -5,12 +5,15 @@ class Node
   public:
     int val;
     Node *next;
-    Node()
-    {
-        next = NULL;
-    }
+    Node(int value);
     void printMe();
 };
+
+Node::Node(int value)
+{
+    val = value;
+    next = NULL;
+}
 
 void Node::printMe()
 {
@@ -22,18 +25,19 @@ class SLL
 {
   public:
     Node *head;
-    SLL()
-    {
-        head = NULL;
-    }
+    SLL();
     void add(int value);
     void printVals();
 };
 
+SLL::SLL()
+{
+    head = NULL;
+}
+
 void SLL::add(int value)
 { 
-    Node *temp = new Node;
-    temp->val = value;
+    Node *temp = new Node(value);
     if(head == NULL)
     {
         head = temp;
